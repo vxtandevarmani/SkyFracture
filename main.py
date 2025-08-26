@@ -25,7 +25,7 @@ def faster_modulo(instructionLen, interval):
 def chunk_list(lst, chunk_size):
     return [ [i // chunk_size, lst[i:i + chunk_size] ] for i in range(0, len(lst), chunk_size)]
 
-def secure_shuffle(lst):
+def secure_shuffle(lst): # Fisher-Yates shuffle algorithm
     for i in range(len(lst) - 1, 0, -1):
         j = secrets.randbelow(i + 1)  # random int in [0, i]
         lst[i], lst[j] = lst[j], lst[i]
